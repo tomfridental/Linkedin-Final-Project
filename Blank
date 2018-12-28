@@ -1,0 +1,24 @@
+import React, { Component } from 'react';
+import styled from 'styled-components';
+
+class SocialCount extends Component {
+
+    render() {
+        return (
+            <Main>
+
+
+            </Main> 
+        )
+    }
+}
+
+export default SocialCount;
+
+//CSS//
+const Main = styled.div`
+width: 100%;
+height: 3.5rem;
+border: 1px solid lightgray;
+background-color: #ffffff;
+`
