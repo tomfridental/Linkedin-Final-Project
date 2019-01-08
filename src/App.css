@@ -8,3 +8,23 @@ body {
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Emoji","Segoe UI Symbol","Lucida Grande",Helvetica,Arial,sans-serif;
     background-color: #f5f5f5;
 }
+
+@media only screen and (max-width: 1224px) {
+    html, body {
+        font-size: 9px;
+        }
+    }
+
+
+@media only screen and (max-width: 1024px) {
+    html, body {
+        font-size: 8px;
+        }
+    }
+
+@media only screen and (max-width: 768px) {
+    html, body {
+        font-size: 7px;
+        }
+    }
+

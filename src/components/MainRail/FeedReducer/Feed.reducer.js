@@ -5,7 +5,9 @@ import { LIKE_UPLOADED_OK, LIKE_UPLOADED_ERROR } from './Feed.action'
 import { REMOVE_POST_ARR } from './Feed.action'
 import { UPLOAD_NEW_COMMENT, COMMENT_UPLOADED_OK, COMMENT_UPLOADED_ERROR } from './Feed.action'
 import {UPLOAD_NEW_SUBCOMMENT,SUBCOMMENT_UPLOADED_OK,SUBCOMMENT_UPLOADED_ERROR} from './Feed.action'
-import {FETCHING_COMMENTS, COMMENTS_FETCHED_OK, COMMENTS_FETCHED_ERROR} from './Feed.action'
+import {FETCHING_COMMENTS, COMMENTS_FETCHED_OK, COMMENTS_FETCHED_ERROR} from './Feed.action';
+import {FETCHING_SEARCH_RESULTS, SEARCH_RESULTS_OK, SEARCH_RESULTS_ERROR} from './Feed.action';
+
 
 let originalState = {
     msgSaved: null,
@@ -14,6 +16,7 @@ let originalState = {
     uploadedComment: {},
     uploadedSubComment: {},
     fetchingPosts: false,
+    searchSuggestions: [],
     postOffSet: 0
 }
 
@@ -137,6 +140,17 @@ export default (state = originalState, action) => {
 
         case COMMENTS_FETCHED_ERROR:
         return{...state,
+        err: action.payload.err}
+
+        case FETCHING_SEARCH_RESULTS:
+        return state
+
+        case SEARCH_RESULTS_OK:
+        return {...state, 
+            searchSuggestions: action.payload}
+
+        case SEARCH_RESULTS_ERROR:
+        return {...state,
         err: action.payload.err}
 
         default:

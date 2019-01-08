@@ -48,4 +48,10 @@ flex-direction: column;
 justify-content: flex-start;
 border-bottom: none;
 width: 100%;
+
+@media only screen and (max-width: 580px) {
+    align-items: flex-start;
+    margin-top: 1.5rem;
+    width: 99%;
+}
 `

@@ -107,10 +107,17 @@ const LiImgDiv = styled.div`
 height: 5.6rem;
 width: 5.6rem;
 position: relative;
+margin-right: 1rem;
+
+@media only screen and (max-width: 580px) {
+width: 4.6rem;
+height: 4.6rem;
+}
 `
 
 const LiImg = styled.img`
-
+height: 5.6rem;
+width: 5.6rem;
 `
 
 const LiConImg1 = styled.img`

@@ -49,6 +49,10 @@ height: 3rem;
 position: relative;
 display: flex;
 align-items: center;
+
+@media only screen and (max-width: 580px) {
+   display: none;
+}
 `
 
 const Line = styled.hr`

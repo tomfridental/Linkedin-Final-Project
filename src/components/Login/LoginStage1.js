@@ -106,6 +106,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+@media only screen and (max-width: 580px) {
+height: 100vh;
+}
 `
 
 const Main = styled.div`

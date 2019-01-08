@@ -24,10 +24,11 @@ class LoginStage3 extends Component {
 
 
     finishStage = () => {
+        if(this.file_data){
         this.setState({showLoader: true})
         const userID = this.props.loginData.user._id
         this.props.finishTutorial(this.file_data, userID)
-        
+        }
 
     }
 
@@ -82,7 +83,7 @@ class LoginStage3 extends Component {
                     </Photo>
                     <User>{`${user.first_name} ${user.last_name}`}</User>
                     <Title>{user.job_title}</Title>
-                    <Button onClick={this.finishStage}>
+                    <Button onClick={this.finishStage} finish={this.file_data}>
                         Add a photo
                        {this.state.showLoader && <Loader />}
                     </Button>
@@ -119,6 +120,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+@media only screen and (max-width: 580px) {
+height: 100vh;
+}
 `
 
 const Main = styled.div`
@@ -185,10 +190,11 @@ border: none;
 width: 36rem;
 height: 4.2rem;
 color: white;
-background-color: #0073b1;
+background-color: ${props => props.finish === null ? 'rgb(0, 115, 177)' : '#0073b1'};
+opacity: ${props => props.finish === null ? '0.3' : '1'};
 font-size: 2rem;
 margin-top: 2rem;
-cursor: pointer;
+cursor: ${props => props.finish === null ? 'not-allowed' : 'pointer'};
 position: relative;
 
 &:hover{

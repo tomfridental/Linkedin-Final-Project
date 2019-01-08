@@ -18,19 +18,6 @@ class Links extends Component {
         this.setState({ showMenu: false })
     }
 
-    // componentDidUpdate(prevProps){
-    //     if(prevProps.location !== this.props.location){
-    //         console.log('Wooooooooohoooooooooo!')
-    //     }
-    //     else{
-    //         console.log('old Props: ',prevProps.location)
-    //         console.log('new Props: ',this.props.location)
-    //     }
-    // }
-
-
-
-
     render() {
         const { user, logUserOut } = this.props
 
@@ -42,7 +29,7 @@ class Links extends Component {
                     name={'/feed'}
                     active={this.props.activePage}>
                     <i class="fas fa-home"></i>
-                    <div>Home</div>
+                    <LinkText>Home</LinkText>
                 </LinkDiv>
 
 
@@ -51,7 +38,7 @@ class Links extends Component {
                     name={'/mynetwork'}
                     active={this.props.activePage}>
                     <i class="fas fa-user-friends"></i>
-                    <div>My Network</div>
+                    <LinkText>My Network</LinkText>
                 </LinkDiv>
 
 
@@ -60,7 +47,7 @@ class Links extends Component {
                     name={'/jobs'}
                     active={this.props.activePage}>
                     <i class="fas fa-briefcase"></i>
-                    <div>Jobs</div>
+                    <LinkText>Jobs</LinkText>
                 </LinkDiv>
 
 
@@ -69,17 +56,17 @@ class Links extends Component {
                     name={'/messaging'}
                     active={this.props.activePage}>
                     <i class="fas fa-comments"></i>
-                    <div>Messaging</div>
+                    <LinkText>Messaging</LinkText>
                 </LinkDiv>
 
 
-                <LinkDiv onClick={() => this.props.history.push('/mynetwork')} name={'Notification'}><i class="fas fa-bell"></i><div>Notification</div></LinkDiv>
+                <LinkDiv onClick={() => this.props.history.push('/mynetwork')} name={'Notification'}><i class="fas fa-bell"></i><LinkText>Notification</LinkText></LinkDiv>
 
                 <LinkMe onClick={this.displayMenu.bind(this)} ref={ClickMeRef => this.ClickMeRef = ClickMeRef}>
                     <img src={user.avatar} alt="s" />
-                    <div>
+                    <LinkTextMe>
                         Me <i class="fas fa-sort-down"></i>
-                    </div>
+                    </LinkTextMe>
                 </LinkMe>
                 {this.state.showMenu && <Menu user={user} show={this.state.showMenu} hideMenu={this.hideMenu.bind(this)} ClickMeRef={this.ClickMeRef}
                     logUserOut={logUserOut} />}
@@ -99,6 +86,15 @@ align-items: center;
 width: 48rem;
 border-right: 1px solid #5c6f7c;
 position: relative;
+
+@media only screen and (max-width: 580px) {
+width: 100%;
+justify-content: center;
+flex-wrap: wrap;
+height: 6.2rem;
+order: -1;
+padding: 0 2rem;
+}
 `
 
 const LinkDiv = styled.div`
@@ -118,14 +114,14 @@ border-bottom: ${props => props.active === props.name ? '3px solid white' : 'non
         font-size: 1.9rem;
         padding-top: 0.7rem;
         padding-bottom: 0.2rem;
+
+        @media only screen and (max-width: 580px) {
+        font-size: 3rem;
+        }
     }
 
     &:hover {
         color: white;
-    }
-
-    & div {
-        font-weight: 600;
     }
 
     &:visited{
@@ -135,6 +131,19 @@ border-bottom: ${props => props.active === props.name ? '3px solid white' : 'non
     &:active {
         text-decoration: none;
     }
+
+@media only screen and (max-width: 580px) {
+/* margin: 0 1.5rem; */
+width: 16%;
+}   
+`
+
+const LinkText = styled.div`
+font-weight: 600;
+
+@media only screen and (max-width: 1024px) {
+display: none;
+}
 `
 
 const LinkMe = styled(LinkDiv)`
@@ -149,21 +158,28 @@ border: none;
     height: 2.4rem;
     border-radius: 50%;
     margin-top: 0.9rem;
+
+    @media only screen and (max-width: 580px) {
+height: 3.6rem;
+width: 3.6rem;
+}
 }
 
+`
 
-& div {
+const LinkTextMe = styled(LinkText)`
     margin-top: 0.1rem;
     display: flex;
     align-items: flex-start;
-
 
     & i {
     font-size: 1.1rem; 
     padding: 0px 0px;
     padding-left: 3px;
     }
+
+@media only screen and (max-width: 1024px) {
+align-content: flex-start;
 }
 `
-
 

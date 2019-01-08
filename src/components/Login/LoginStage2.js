@@ -101,12 +101,14 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
-/* margin-top: 5.3rem; */
+
+@media only screen and (max-width: 580px) {
+height: 100vh;
+}
 `
 
 const Main = styled.div`
 width: 74rem;
-/* height: 40rem; */
 display: flex;
 flex-direction: column;
 align-items: center;

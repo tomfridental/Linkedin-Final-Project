@@ -6,8 +6,8 @@ class Work extends Component {
     render() {
         return (
             <Main>
-                <Link href="#"><i class="fas fa-th"></i><div>Work <i class="fas fa-sort-down"></i></div></Link>
-                <TryPrimium href="#">Try Primium Free <br />
+                <Link><i class="fas fa-th"></i><div>Work <i class="fas fa-sort-down"></i></div></Link>
+                <TryPrimium>Try Primium Free <br />
                             for 1 Month
                 </TryPrimium>
             </Main>
@@ -22,9 +22,13 @@ const Main = styled.div`
 display: flex;
 justify-content: flex-start;
 align-items: center;
+
+@media only screen and (max-width: 580px) {
+display: none;
+}
 `
 
-const Link = styled.a`
+const Link = styled.div`
 margin-left: 1.2rem;
 height: 5.2rem;
 width: 6rem;
@@ -36,6 +40,7 @@ font-size: 1.2rem;
 color: #c7d1d8;
 text-decoration: none;
 font-weight: 600;
+cursor: pointer;
 
     & i {
         font-size: 1.9rem;
@@ -61,7 +66,7 @@ font-weight: 600;
 }
 `
 
-const TryPrimium = styled.a`
+const TryPrimium = styled.div`
 font-size: 1.4rem;
 margin-left: 0.4rem;
 height: 5.2rem;
@@ -74,6 +79,7 @@ font-weight: 400;
 text-decoration: none;
 text-align: center;
 padding-top: 0.2rem;
+cursor: pointer;
 
 
     &:hover {

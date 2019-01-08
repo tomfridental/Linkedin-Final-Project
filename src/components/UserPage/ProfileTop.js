@@ -22,7 +22,8 @@ class ProfileTop extends Component {
                 </ProfileImg>
                 <ProfileLeft>
                     <UserName>{selectedUser.first_name} {selectedUser.last_name}</UserName>
-                    <Title>{selectedUser.job_title}</Title>
+                    <Title>{selectedUser.job_title} at {selectedUser.company_name}</Title>
+                    <MQInfo>{selectedUser.last_name} · Netcraft Academy</MQInfo>
                     <Location>{selectedUser.country}</Location>
                     {user && selectedUser._id !== user._id &&
                     <Buttons>
@@ -114,6 +115,10 @@ align-items: flex-end;
 justify-content: space-between;
 padding-bottom: 2rem;
 position: relative;
+
+@media only screen and (max-width: 580px) {
+height: 49.5rem;
+}
 `
 
 const ProfileImg = styled.div`
@@ -125,6 +130,10 @@ height: 14rem;
 border-radius: 50%;
 border: .1rem solid black;
 background-color: white;
+
+@media only screen and (max-width: 580px) {
+left: calc(50% - 7rem);
+}
 `
 
 const Img = styled.img`
@@ -140,21 +149,49 @@ height: 15.2rem;
 background-color: white;  
 display: flex;
 flex-direction: column;
+
+@media only screen and (max-width: 580px) {
+width: 100%;
+align-items: center;
+height: 22.2rem;
+}
 `
 
 const UserName = styled.div`
 font-size: 2.2rem;
 color: rgba(0,0,0, .9);
 padding: .5rem 0;
+
+@media only screen and (max-width: 580px) {
+font-size: 3.4rem;
+}
 `
 
 const Title = styled.div`
 padding: .5rem 0;
 font-size: 1.8rem;
 color: rgba(0,0,0, .9);
+
+@media only screen and (max-width: 580px) {
+font-size: 2.4rem;
+}
 `
+
+const MQInfo = styled.div`
+display: none;
+font-size: 1.8rem;
+
+@media only screen and (max-width: 580px) {
+display: flex;
+}
+`
+
 const Location = styled.div`
 padding: .5rem 0;
+
+@media only screen and (max-width: 580px) {
+font-size: 1.8rem;
+}
 `
 
 const Buttons = styled.div`
@@ -175,6 +212,11 @@ font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helve
 &:hover{
     background-color: #006097;
 }
+
+@media only screen and (max-width: 580px) {
+width: 14.5rem;
+height: 6rem;
+}
 `
 
 const MessageButton = styled.button`
@@ -193,6 +235,11 @@ font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helve
 &:hover {
     background-color: rgba(152,216,244,.25);
     box-shadow: inset 0 0 0 1px #0073b1, inset 0 0 0 2px #006097, inset 0 0 0 1px transparent;
+}
+
+@media only screen and (max-width: 580px) {
+width: 14.5rem;
+height: 6rem;
 }
 `
 
@@ -214,6 +261,11 @@ font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helve
     color: rgba(0,0,0,.75);
     box-shadow: inset 0 0 0 .1rem rgba(0,0,0,.6), inset 0 0 0 .2rem rgba(0,0,0,.75), inset 0 0 0 .1rem transparent;
 }
+
+@media only screen and (max-width: 580px) {
+width: 14.5rem;
+height: 6rem;
+}
 `
 
 const ProfileRight = styled.div`
@@ -223,6 +275,10 @@ margin-right: 2.5rem;
 display: flex;
 flex-direction: column;
 justify-content: flex-end;
+
+@media only screen and (max-width: 580px) {
+display: none;
+}
 `
 
 const AddSectionButton = styled(ConnectButton)`
@@ -232,6 +288,11 @@ height: 4rem;
 & i{
 margin-left: 0.5rem;
 vertical-align: top;
+}
+
+@media only screen and (max-width: 580px) {
+width: 18.5rem;
+height: 6rem;
 }
 `
 
@@ -285,6 +346,10 @@ padding: 1rem 0;
 width: 74.2rem;
 max-height:${props=> props.showMore ? 'max-content' : '15.5rem'};
 overflow: hidden;
+
+@media only screen and (max-width: 580px) {
+display: none;
+}
 `
 
 const ShowMore = styled.div`
@@ -302,5 +367,9 @@ font-weight: 600;
     font-size: 2rem;
     margin-left: 1rem;
     transform: ${props => props.showMore ? 'rotate(180deg)' : 'none'};
+}
+
+@media only screen and (max-width: 580px) {
+display: none;
 }
 `

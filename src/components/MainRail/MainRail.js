@@ -94,4 +94,12 @@ width: 54.8rem;
 margin-top: 5.2rem;
 padding: 0 2.5rem;
 background-color: #f5f5f5;
+z-index: 1;
+
+@media only screen and (max-width: 580px) {
+    margin-top: 12.4rem;
+    padding: 0;
+    width: 99%;
+    overflow-x: hidden;
+}
 `

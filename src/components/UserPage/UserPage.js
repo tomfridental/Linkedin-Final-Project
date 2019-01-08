@@ -95,4 +95,8 @@ background-color: #f5f5f5;
 
 const LeftColum = styled.div`
 width: 79.2rem;
+
+@media only screen and (max-width: 580px) {
+width: 99%;
+}
 `

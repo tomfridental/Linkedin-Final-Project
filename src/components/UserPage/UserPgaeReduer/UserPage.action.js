@@ -6,6 +6,7 @@ export const USER_FETCHED_ERROR = 'USER_FETCHED_ERROR';
 
 export const REMOVE_USERPAGE_DATA = 'REMOVE_USERPAGE_DATA';
 
+const API_URL = process.env.REACT_APP_API_URL
 
 export const getSelectedUserInfo = (userID) => {
 
@@ -13,7 +14,7 @@ export const getSelectedUserInfo = (userID) => {
 
         dispatch({ type: FETCHING_USER_DATA })
 
-        return fetch(`/api/user/profile/${userID}?limit=10`, {
+        return fetch(`${API_URL}/api/user/profile/${userID}?limit=10`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

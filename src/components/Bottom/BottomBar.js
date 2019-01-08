@@ -14,7 +14,7 @@ class BottomBar extends Component {
             if (user.registrationWizard === 'done') {
                 return (
                     <Wrapper>
-                        <Messaging />
+                        <Messaging user={user}/>
                     </Wrapper>
                 )
             } 
@@ -49,9 +49,13 @@ function mapStateToProps(state, ownProps) {
 const Wrapper = styled.div`
 position: fixed;
 bottom: 0;
-height: 4.2rem;
+/* height: 4.2rem; */
 display: flex;
 flex-direction: row-reverse;
 width: 100%;
-z-index: 2;
+z-index: 0;
+
+@media only screen and (max-width: 580px) {
+width: 100vw;
+}
 `

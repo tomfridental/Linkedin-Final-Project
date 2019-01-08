@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import FriendsList from './FriendList'
 
 class Messaging extends Component {
 
+    state = {
+        showMsgWindow: false
+    }
+
+    toggleMsgWindow = () => {
+        this.setState(prevState => ({showMsgWindow: !prevState.showMsgWindow}))
+    }
+
     render() {
+
+
         return (
-            <Main>
-                <Messeging> 
-                    <StatusSign></StatusSign>
-                    Messaging
+            <Wrapper>
+                <Main onClick={this.toggleMsgWindow}>
+                    <Messeging>
+                        <StatusSign></StatusSign>
+                        Messaging
                     </Messeging>
-                <NewMsg><i class="far fa-edit"></i></NewMsg>
-                <Settings><i class="fas fa-cog"></i></Settings>
-            </Main>
+                    <NewMsg><i class="far fa-edit"></i></NewMsg>
+                    <Settings><i class="fas fa-cog"></i></Settings>
+                </Main>
+               {this.state.showMsgWindow && <FriendsList user={this.props.user}/>}
+            </Wrapper>
         )
     }
 }
@@ -20,13 +34,18 @@ class Messaging extends Component {
 export default Messaging;
 
 //CSS//
-const Main = styled.a`
+
+const Wrapper = styled.div`
 display: flex;
-align-items: center;
-/* border: 1px solid #929292; */
-height: 4.2rem;
+flex-direction: column;
 width: 25.3rem;
 margin-right: 2.3rem;
+`
+
+const Main = styled.div`
+display: flex;
+align-items: center;
+height: 4.2rem;
 background-color: white;
 cursor: pointer;
 padding: 0 0.5rem;
@@ -71,3 +90,4 @@ border-radius: 50%;
 const Settings = styled(NewMsg)`
 
 `
+

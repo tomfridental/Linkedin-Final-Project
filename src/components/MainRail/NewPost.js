@@ -73,6 +73,11 @@ position: relative;
 width: 54.8rem;
 background-color: white;
 box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+
+@media only screen and (max-width: 580px) {
+    width: 98%;
+    margin-left: -.5rem;
+}
 `
 const StartPost = styled.div`
 width: 100%;
@@ -106,6 +111,10 @@ color: #0073b1;
 
 &:hover i{
 color: #0073b1;
+}
+
+@media only screen and (max-width: 580px) {
+    width: 100%;
 }
 `
 
@@ -144,7 +153,11 @@ display: flex;
 align-items: center;
 font-size: 1.4rem;
 color: rgba(0,0,0,.6);
-font-weight: 400; 
+font-weight: 400;
+
+@media only screen and (max-width: 580px) {
+    display: none;
+}
 `
 
 const A = styled.a`

@@ -30,6 +30,10 @@ width: 52.8rem;
 height: 6rem;
 display: flex;
 padding: 1rem 1rem;
+
+@media only screen and (max-width: 580px) {
+width: 100%;
+}
 `
 
 const Avatar = styled.div`
@@ -52,6 +56,10 @@ margin-left: 1rem;
 display: flex;
 flex-direction: column;
 cursor: pointer;
+
+@media only screen and (max-width: 580px) {
+width: 100%;
+}
 `
 
 const InfoName = styled.div`
@@ -86,4 +94,8 @@ display: flex;
 justify-content: flex-end;
 font-size: 2rem;
 color: rgba(0,0,0,.6); 
+
+@media only screen and (max-width: 580px) {
+margin-right: 3rem;
+}
 `

@@ -61,6 +61,11 @@ width: 30%;
 display: flex;
 justify-content: center;
 align-items: center;
+
+@media only screen and (max-width: 580px) {
+width: 15%;
+}
+
 `
 
 const Login = styled.div`
@@ -69,12 +74,21 @@ width: 70%;
 display: flex;
 justify-content: center;
 align-items: center;
+
+@media only screen and (max-width: 580px) {
+width: 85%;
+}
 `
 
 const Img = styled.img`
 width: 11.1rem;
 height: 2.8rem;
 cursor: pointer;
+
+@media only screen and (max-width: 580px) {
+width: 5rem;
+height: 1.5rem;
+}
 `
 const Form = styled.form`
 display: flex;
@@ -87,6 +101,17 @@ margin-right: 1rem;
 display: flex;
 align-items: center;
 padding-left: 1rem;
+font-size: 1.4rem;
+
+@media only screen and (max-width: 580px) {
+width: 16rem;
+height: 2.4rem;
+}
+
+@media only screen and (max-width: 480px) {
+width: 11rem;
+height: 1.98rem;
+}
 `
 
 const Password = styled(Email)`
@@ -106,6 +131,11 @@ cursor: pointer;
     background-color: white;
     color: #283e4a;
 }
+
+@media only screen and (max-width: 480px) {
+width: 7rem;
+font-size: 1.2rem;
+}
 `
 const ForgotPass = styled.div`
 margin-left: 2rem;
@@ -121,5 +151,9 @@ cursor: pointer;
     color: white;
     text-decoration: underline;
     font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 580px) {
+    margin-left: 1rem;
 }
 `

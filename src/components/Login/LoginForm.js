@@ -103,6 +103,10 @@ background-size: cover;
 display: flex;
 justify-content: center;
 align-items: center;
+
+@media only screen and (max-width: 580px) {
+   height: 78rem;
+}
 `
 
 const Box = styled.div`

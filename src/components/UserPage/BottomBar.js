@@ -78,6 +78,10 @@ border-top: 1px solid lightgray;
 const Header = styled.div`
 margin-top: 2rem;
 width: 113rem;
+
+@media only screen and (max-width: 580px) {
+width: 99%;
+}
 `
 
 const Img = styled.img`
@@ -89,6 +93,10 @@ const Main = styled.div`
 display: flex;
 width: 113rem;
 margin-bottom: 1rem;
+
+@media only screen and (max-width: 580px) {
+width: 99%;
+}
 `
 
 const LeftColum = styled.div`
@@ -119,6 +127,10 @@ width: 25rem;
 display: flex;
 flex-direction: column;
 margin-left: 3rem;
+
+@media only screen and (max-width: 580px) {
+display: none;
+}
 `
 
 const RCBox = styled.div`
@@ -169,6 +181,10 @@ color: #495D6E;
 font-size: 1.2rem;
 font-weight: normal;
 padding: 1rem 0;
+
+@media only screen and (max-width: 580px) {
+display: none;
+}
 `
 
 const SelectLang = styled.select`
@@ -193,4 +209,8 @@ color: rgba(0,0,0.6);
 font-weight: normal;
 width: 113rem;
 margin-bottom: 2rem;
+
+@media only screen and (max-width: 580px) {
+width: 99%;
+}
 `

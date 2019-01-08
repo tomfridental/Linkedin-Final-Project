@@ -33,7 +33,9 @@ export const FINISH_TUTORIAL_NO_AVATAR = 'FINISH_TUTORIAL_NO_AVATAR';
 export const FINISH_TUTORIAL_NO_AVATAR_OK = 'FINISH_TUTORIAL_NO_AVATAR_OK';
 export const FINISH_TUTORIAL_NO_AVATAR_ERROR = 'FINISH_TUTORIAL_NO_AVATAR_ERROR';
 
+require('dotenv').config()
 
+const API_URL = process.env.REACT_APP_API_URL
 
 export const createNewUser = (userData) => {
 
@@ -41,7 +43,7 @@ export const createNewUser = (userData) => {
 
         dispatch({ type: CREATING_NEW_USER })
 
-        return fetch('/api/auth/register', {
+        return fetch(`${API_URL}/api/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -68,7 +70,7 @@ export const updateUserLocation = (userData) => {
 
         dispatch({ type: UPDATING_USER_LOCATION })
 
-        return fetch(`/api/auth/update/${userData.id}`, {
+        return fetch(`${API_URL}/api/auth/update/${userData.id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -96,7 +98,7 @@ export const updateUserJob = (userData) => {
 
         dispatch({ type: UPDATING_USER_JOB })
 
-        return fetch(`/api/auth/update/${userData.id}`, {
+        return fetch(`${API_URL}/api/auth/update/${userData.id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -124,7 +126,7 @@ export const finishTutorial = (fileData,userID) => {
 
         dispatch({ type: FINISH_TUTORIAL })
 
-        return fetch(`/api/user/finish/${userID}`, {
+        return fetch(`${API_URL}/api/user/finish/${userID}`, {
             method: 'POST',
             // headers: {
             //     "Content-Type": "multipart/form-data"
@@ -150,7 +152,7 @@ export const loginUser = (userData) => {
 
         dispatch({ type: LOGGING_IN })
 
-        return fetch(`/api/auth/login`, {
+        return fetch(`${API_URL}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -177,7 +179,7 @@ export const verifyToken = (token) => {
 
         dispatch({ type: VERIFY_TOKEN })
  
-        return fetch(`/api/auth/me`, {
+        return fetch(`${API_URL}/api/auth/me`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -202,7 +204,7 @@ export const finishTutorialNoAvatar = (userID) => {
 
         dispatch({ type: FINISH_TUTORIAL_NO_AVATAR })
 
-        return fetch(`/api/user/finish/noavatar/${userID}`, {
+        return fetch(`${API_URL}/api/user/finish/noavatar/${userID}`, {
             method: 'POST',
         })
             .then((res) => res.json())

@@ -24,7 +24,7 @@ class LoginBottom extends Component {
             <Main>
 
                 <Form>
-                    <span>Find a colleague:</span>
+                    <FindColleague>Find a colleague:</FindColleague>
                     <Input placeholder="First name" name="first_name" onChange={this.updateInfo}/>
                     <Input placeholder="Last name" name="last_name" onChange={this.updateInfo}/>
                     <SearchButton 
@@ -123,12 +123,32 @@ align-items: center;
 color: white;
 font-size: 1.6rem;
 margin-top: 3rem;
+
+@media only screen and (max-width: 480px) {
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+`
+const FindColleague = styled.span`
+@media only screen and (max-width: 480px) {
+width: 5.2rem;
+}
 `
 
 const Input = styled.input`
 margin-left: 1rem;
 width: 23.2rem;
 height: 2.8rem;
+
+@media only screen and (max-width: 480px) {
+  width: 16rem;
+  height: 2.52rem;
+  font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 360px) {
+  margin-left: .5rem;
+}
 `
 
 const SearchButton = styled.button`
@@ -151,6 +171,12 @@ color: white;
 font-size: 1.4rem;
 font-weight: 400;
 margin-top: 2rem;
+flex-wrap: wrap;
+
+@media only screen and (max-width: 480px) {
+  font-size: 1rem;
+  overflow: hidden;
+}
 `
 
 const Letter = styled.div`
@@ -158,6 +184,10 @@ cursor: pointer;
 margin-left: .75rem;
 font-size: 1.4rem;
 text-transform: uppercase;
+
+@media only screen and (max-width: 480px) {
+  font-size: 1.2rem;
+}
 
 &:hover {
 text-decoration: underline;
@@ -170,6 +200,10 @@ text-transform: none;
 
 const Browse = styled(More)`
 margin-left: 2rem;
+
+@media only screen and (max-width: 480px) {
+    margin-left: 1rem;
+}
 `
 
 const Links = styled.div`
@@ -178,7 +212,7 @@ padding: 2rem 0;
 border-top: 1px solid rgba(255,255,255,0.15);
 border-bottom: 1px solid rgba(255,255,255,0.15);
 display: flex;
-width: 112.8rem;
+width: 100%;
 flex-wrap: wrap;
 justify-content: center;
 `
@@ -198,6 +232,7 @@ const LinkBoxTitle = styled.div`
 
 const LinkBoxList = styled.div`
 display: flex;
+flex-wrap: wrap;
 margin-top: 1rem;
 `
 
@@ -211,13 +246,19 @@ font-weight: 400;
 &:hover{
     text-decoration: underline;
 }
+
+@media only screen and (max-width: 580px) {
+font-size: 1.2rem;
+}
 `
 
 const BottomBar = styled.div`
 display: flex;
 align-items: center;
+justify-content: center;
 margin-bottom: 2rem;
-width: 112.8rem;
+width: 100%;
+overflow: hidden;
 `
 
 const Img = styled.img`

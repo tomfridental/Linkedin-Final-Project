@@ -230,6 +230,10 @@ opacity: 1;
 z-index: 4;
 display: flex;
 flex-direction: column;
+
+@media only screen and (max-width: 580px) {
+width: 99%;
+}
 `
 
 const Header = styled.div`

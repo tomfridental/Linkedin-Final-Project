@@ -27,4 +27,8 @@ width: 32.8rem;
 margin-top: 5.2rem;
 background-color: #f5f5f5;
 position: relative;
+
+@media only screen and (max-width: 580px) {
+    display: none;
+}
 `

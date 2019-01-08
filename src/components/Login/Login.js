@@ -20,7 +20,7 @@ class Login extends Component {
         if (auth && user.registrationWizard !== 'done') {
             this.props.history.push('/start/location')
         }
-        if (loginErrMsg === '201') {
+        if (loginErrMsg === '201' || loginErrMsg === '202') {
             this.props.history.push('/login')
         }
         return (

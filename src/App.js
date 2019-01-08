@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { HashRouter, Route, Switch } from 'react-router-dom';
-// import {BrowserRouter} from 'react-router-dom';
+import {Route, Switch } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
+// import {HashRouter} from 'react-router-dom';
 import TopBar from './components/TopBar/TopBar';
 import BottomBar from './components/Bottom/BottomBar';
 import styled from 'styled-components';
@@ -14,12 +15,13 @@ import LoginFail from './components/Login/LoginFail';
 import MyNetwork from './components/MyNetwork/MyNetwork';
 import UserPage from './components/UserPage/UserPage';
 
+
 class App extends Component {
 
   render() {
 
     return (
-      <HashRouter hashType="slash">
+      <BrowserRouter>
         <Wrapper>
           <TopBar />
           <Switch>
@@ -35,7 +37,7 @@ class App extends Component {
           </Switch>
           <BottomBar />
         </Wrapper>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
@@ -47,6 +49,6 @@ export default App;
 
 const Wrapper = styled.div`
 display: flex;
-flex-basis: 100%;
+width: 100%;
 `
 

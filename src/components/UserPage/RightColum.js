@@ -41,6 +41,10 @@ margin-left: 2.5rem;
 & a{
     text-decoration: none;
 }
+
+@media only screen and (max-width: 580px) {
+display: none;
+}
 `
 
 const Title = styled.h2`

@@ -127,7 +127,8 @@ export default (state = originalState, action) => {
                 auth: action.payload.auth,
                 token: action.payload.token,
                 user: action.payload.user,
-                loginErrMsg: action.payload.message
+                loginErrMsg: action.payload.message,
+                sentData: action.payload.sentData
             }
 
         case LOGGING_IN_ERROR:
@@ -155,7 +156,8 @@ export default (state = originalState, action) => {
 
         case CLEAR_LOGIN_ERROR:
         return {...state,
-            loginErrMsg: null}
+            loginErrMsg: null,
+            sentData: null}
 
         //Log Out//
         case LOG_USER_OUT:

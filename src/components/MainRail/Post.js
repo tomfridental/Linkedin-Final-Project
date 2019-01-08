@@ -104,6 +104,10 @@ width: 54.8rem;
 background-color: #ffffff;
 box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
 margin-bottom: 1rem;
+
+@media only screen and (max-width: 580px) {
+width: 99%;
+}
 `
 
 const BeFirst = styled.div`
@@ -116,4 +120,8 @@ font-size: 1.2rem;
 font-weight: 400;
 color: rgb(0,0,0, .9);
 padding-left: 1.5rem;
+
+@media only screen and (max-width: 580px) {
+width: 100%;
+}
 `
